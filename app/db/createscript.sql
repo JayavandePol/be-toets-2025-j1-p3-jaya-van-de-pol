@@ -297,31 +297,27 @@ VALUES
  ('Ultimate Ears (UE) Boom 3', 15, 'IP67 (waterdicht en drijvend!)', 'Bluetooth 5.0', 1, NULL, SYSDATE(6), SYSDATE(6));
 
 
- 
-
 -- Step: 12
--- *****************************************************************************************************
--- Doel : Maak een nieuwe tabel aan met de naam Zangeres
--- *****************************************************************************************************
+-- *****************************************************************
+-- Doel : Maak de tabel Zangeres
+-- *****************************************************************
 -- Versie       Datum           Auteur              Omschrijving
 -- ******       *****           ******              ************
--- 01           18-03-2025      Arjan de Ruijter    Tabel Zangeres
--- *****************************************************************************************************
--- Onderstaande velden zelf toevoegen aan de tabel Zangeres
--- *****************************************************************************************************
+-- 01           18-3-2025      Arjan de Ruijter     Aanmaken Zangeres
+-- *****************************************************************
 
 CREATE TABLE Zangeres
 (
      Id                 SMALLINT        UNSIGNED    NOT NULL        AUTO_INCREMENT
-    ,Naam               VARCHAR(50)                 NOT NULL
-    ,Nettowaarde        SMALLINT        UNSIGNED    NOT NULL
-    ,Land               VARCHAR(50 )                NOT NULL
-    ,Mobiel             VARCHAR(30)                 NOT NULL
-    ,Leeftijd           TINYINT         UNSIGNED    NOT NULL
-    ,IsActief           BIT                         NOT NULL        DEFAULT 1
-    ,Opmerking          VARCHAR(255)                    NULL        DEFAULT NULL
-    ,DatumAangemaakt    DATETIME(6)                 NOT NULL
-    ,DatumGewijzigd     DATETIME(6)                 NOT NULL
+    ,Naam               VARCHAR(100)                NOT NULL    -- Verhoogd naar 100 voor langere namen
+    ,Nettowaarde        INT             UNSIGNED    NOT NULL    -- Veranderd naar INT voor grotere waarden
+    ,Land               VARCHAR(50)                 NOT NULL    -- 50 is prima voor landnamen
+    ,Mobiel             VARCHAR(20)                 NOT NULL    -- 20 is genoeg voor telefoonnummers
+    ,Leeftijd           TINYINT         UNSIGNED    NOT NULL    -- Prima voor leeftijd
+    ,IsActief           BOOLEAN                     NOT NULL    DEFAULT 1  -- BOOLEAN is duidelijker dan BIT
+    ,Opmerking          TEXT                            NULL    DEFAULT NULL  -- TEXT voor lange opmerkingen
+    ,DatumAangemaakt    TIMESTAMP(6)                NOT NULL    DEFAULT CURRENT_TIMESTAMP(6)  -- TIMESTAMP met auto-default
+    ,DatumGewijzigd     TIMESTAMP(6)                NOT NULL    DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6)  -- Auto-update
     ,CONSTRAINT         PK_Zangeres_Id              PRIMARY KEY     CLUSTERED(Id)
 ) ENGINE=InnoDB;
 
