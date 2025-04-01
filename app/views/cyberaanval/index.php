@@ -3,11 +3,9 @@
 <div class="container mt-3">
 
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <h3><?= $data['title']; ?></h3>
+        <div class="col-12">
+            <h3 class="text-success text-center fw-bold mt-4">Top 5 Cyberaanvallen Aller tijden</h3>
         </div>
-        <div class="col-1"></div>
     </div>
 
 
@@ -32,7 +30,6 @@
                             <td><?= $cyberaanval->AantalSlachtoffers; ?></td>
                             <td><?= $cyberaanval->TypeAanval; ?></td>
                             <td><?= $cyberaanval->Schade; ?></td>
-
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

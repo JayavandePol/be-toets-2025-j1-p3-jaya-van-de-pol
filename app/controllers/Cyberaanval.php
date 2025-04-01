@@ -14,7 +14,7 @@ class Cyberaanval extends BaseController
         $cyberaanvallen = $this->cyberaanvalModel->getCyberaanvallen();
         
         $data = [
-            'title' => 'Overzicht Cyberaanvallen',
+            'title' => 'Top 5 Cyberaanvallen Aller tijden',
             'cyberaanvallen' => $cyberaanvallen
         ];
 
