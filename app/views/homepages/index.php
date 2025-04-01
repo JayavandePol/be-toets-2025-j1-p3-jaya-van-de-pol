@@ -12,7 +12,8 @@
 
             <a href="<?= URLROOT; ?>/smartphones/index ">Toon smartphones</a> |
             <a href="<?= URLROOT; ?>/sneakers/index">Mooiste Sneakers</a> |
-            <a href="<?= URLROOT; ?>/zangeres/index">Zangeres</a>
+            <a href="<?= URLROOT; ?>/zangeres/index">Zangeres</a> |
+            <a href="<?= URLROOT; ?>/cyberaanval/index">Top 5 Cyberaanvallen</a>
 
         </div>
         

@@ -43,7 +43,6 @@
                 <td><?= $zangeres->Land; ?></td>
                 <td><?= $zangeres->Mobiel; ?></td>
                 <td><?= $zangeres->Leeftijd; ?></td>
-                <td><?= $zangeres->IsActief ? 'Ja' : 'Nee'; ?></td>
                 <td><?= $zangeres->Opmerking ?? ''; ?></td>
                 <td><?= $zangeres->DatumAangemaakt; ?></td>
                 <td><?= $zangeres->DatumGewijzigd; ?></td>
@@ -52,7 +51,7 @@
     </tbody>
 </table>
 <div class="col-1"></div>
-
+<a href="<?= URLROOT; ?>/homepages/index">terug</a>
 </div>
 
 <?php require APPROOT . '/views/includes/footer.php'; ?>
